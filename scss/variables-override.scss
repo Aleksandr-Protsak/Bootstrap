@@ -1,0 +1,27 @@
+$color-primary: #a1947c;
+$color-secondary: #e5d4b7;
+$color-warning: #a1947c;
+$color-gray-600: #939aa6;
+$color-light: white;
+
+$btn-link-color: white;
+$btn-link-hover-color: white;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 868px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 668px,
+    lg: 960px,
+    xl: 1200px,
+    xxl: 1320px
+);
+
+$btn-disabled-opacity: 0.8;

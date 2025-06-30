@@ -1,0 +1,25 @@
+.card-img-block {
+    height: 20rem;
+    width: 100%;
+    display: flex;
+}
+
+.card-img-top {
+    object-fit: contain;
+}
+
+.search-btn {
+    right: 0.5rem;
+    top: 0.125rem;
+}
+
+.icon-btn {
+    display: inline;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0.25rem;
+    width: 2rem;
+    height: 2rem;
+}
