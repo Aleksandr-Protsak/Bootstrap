@@ -159,14 +159,23 @@ const products = [
       "price": 99.99,
       "seller": "VisionBeam"
     }
-  ]
+  ];
+
+  const catalogState = {
+    itemsPerPage: 9,
+    pageProducts: products,
+    productsList: products,
+  }
 
   const cardElClass = 'card';
+  const showProductDetailEventName = 'showProductDetail';
 
   const renderProductsList = (productsList) => {
     const html = [];
+    const limitProducts = productsList.slice(0, catalogState.itemsPerPage);
+    catalogState.pageProducts = limitProducts;
     
-    for(const product of productsList) {
+    for(const product of limitProducts) {
         html.push(`
         <div class="col">
             <div class="${cardElClass} shadow-sm h-100" data-app-product-id="${product.id}">
@@ -200,7 +209,12 @@ const products = [
   document.addEventListener('productsListChanged', (event) => {
     const productsList = event.detail.products;
     renderProductsList(productsList);
+    updateCardListeners();
+
+    if(event.detail.origin === 'filters') {
+      catalogState.productsList = productsList;
+
+      const rerenderPaginateEvent = new CustomEvent('rerenderPaginate');
+      document.dispatchEvent(rerenderPaginateEvent);
+    }
   });
-
-  renderProductsList(products);
-
