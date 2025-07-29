@@ -70,19 +70,27 @@
       <div class="catalog py-5 bg-light">
         <div class="container">
           <div class="w-100 d-flex">
-            <div class="catalog-filter-container d-flex flex-column p-3 bg-white me-3">
+            <div class="catalog-filter-container d-flex flex-column p-3 bg-white me-3 vh-100 rounded-3 sticky-top overflow-auto">
               <h5>Filters</h5>
               
               <form id="filtersForm">
 
                 <div class="d-flex gap-2">
-                  <button class="btn btn-primary">Apply</button>
-                  <button class="btn btn-outline-secondary">Clear</button>
+                  <button class="btn btn-primary flex-fill" id="applyFiltersBtn" type="button">Apply</button>
+                  <button class="btn btn-outline-secondary flex-fill" id="clearFiltersBtn" type="button">Clear</button>
                 </div>
               </form>
             </div>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3 flex-fill" id="catalogProducts"></div>
+            <div class="d-flex flex-column w-100 h-100">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 flex-fill h-100" id="catalogProducts"></div>
+
+              <nav class="d-flex justify-content-center mt-4">
+                <ul class="pagination" id="catalogPaginateNav">
+                 
+                </ul>
+              </nav>
+            </div>
           </div>
 
           <div id="modalsGeneralWrapper"></div>
@@ -98,5 +106,7 @@
   <script src="./scripts/catalog/product-detail-modal.js"></script> 
   <script src="./scripts/catalog/products-search.js"></script> 
   <script src="./scripts/catalog/products-filters.js"></script> 
+  <script src="./scripts/catalog/products-paginate.js"></script> 
+
 </body>
 </html>
