@@ -4,7 +4,7 @@ const updateQueryParam = (key, value) => {
 
     const relativeUrl = url.pathname + url.search + url.hash;
 
-    window.history.replaceState(null, '', relativeUrl);
+    window.history.pushState(null, '', relativeUrl);
 }
 
 const deleteQueryParam = (key) => {
