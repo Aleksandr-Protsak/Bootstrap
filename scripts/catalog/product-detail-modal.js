@@ -41,6 +41,7 @@ const openProductDetailModal = (productId) => {
 
 document.addEventListener(showProductDetailEventName, (event) => {
     const product = event.detail;
+
     openProductDetailModal(product.id);
     updateQueryParam('activeProductId', product.id);
 });
